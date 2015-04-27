@@ -1,6 +1,6 @@
 {
   "name": "tbg_props_to_state",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "React.js helper to transfer initial props to state",
   "main": "./dist/index.js",
   "scripts": {
