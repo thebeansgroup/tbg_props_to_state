@@ -1,4 +1,4 @@
-
+assign  = require('object-assign')
 # Find value and remove from Object
 #
 # @param [Object] currentObject Component properties
@@ -6,7 +6,7 @@
 # @return [All the things] value of removed property
 #
 
-fetchAndRemoveProp = (currentObject, parsedPath) ->
+fetchAndRemoveProp = (currentObject,  parsedPath) ->
   i = 0
   while i < parsedPath.length - 1
     currentObject = currentObject[parsedPath[i]]
@@ -26,7 +26,9 @@ fetchAndRemoveProp = (currentObject, parsedPath) ->
 #
 
 TransferToState = (props, states, state = {})->
-  state[key] = fetchAndRemoveProp(props, path.split('.')) for key,path of states
+  copyProps = assign({}, props)
+  state[key] = fetchAndRemoveProp(copyProps, path.split('.')) for key,path of states
+  props = copyProps
   return state
 
 

@@ -21,6 +21,7 @@
   "homepage": "https://github.com/thebeansgroup/tbg_props_to_state",
   "dependencies": {
     "codo": "^2.0.11",
+    "object-assign": "^3.0.0",
     "semver": "^4.3.3"
   }
 }
